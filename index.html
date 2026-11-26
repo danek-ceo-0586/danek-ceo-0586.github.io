@@ -12,6 +12,7 @@
       --neon-green: #00ff66;
       --neon-cyan: #00e5ff;
       --neon-amber: #ffb86c;
+      --neon-purple: #bd93f9;
       --text: #c5cdd9;
       --dim: #5c6773;
       --font: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
@@ -32,14 +33,14 @@
       content: " ";
       position: fixed;
       top: 0; left: 0; bottom: 0; right: 0;
-      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 255, 0, 0.03));
       background-size: 100% 3px, 6px 100%;
       pointer-events: none;
       z-index: 10;
     }
     .terminal {
       width: 100%;
-      max-width: 820px;
+      max-width: 860px;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -63,7 +64,7 @@
     .dot-y { background: #ffbd2e; }
     .dot-g { background: #27c93f; }
     .title { margin-left: 8px; color: var(--text); font-weight: 600; }
-    .content { padding: 24px; font-size: 14px; }
+    .content { padding: 24px; font-size: 13.5px; }
     .prompt { color: var(--neon-cyan); }
     .cmd { color: #fff; font-weight: 600; }
     .output { margin: 8px 0 20px 0; }
@@ -75,11 +76,22 @@
       padding: 2px 8px;
       border-radius: 4px;
       margin: 3px 4px 3px 0;
-      font-size: 12px;
+      font-size: 11.5px;
+    }
+    .tag-py {
+      background: rgba(0, 255, 102, 0.06);
+      color: var(--neon-green);
+      border-color: rgba(0, 255, 102, 0.25);
+    }
+    .tag-sh {
+      background: rgba(189, 147, 249, 0.08);
+      color: var(--neon-purple);
+      border-color: rgba(189, 147, 249, 0.3);
     }
     .green { color: var(--neon-green); font-weight: bold; }
     .amber { color: var(--neon-amber); }
     .cyan { color: var(--neon-cyan); }
+    .purple { color: var(--neon-purple); }
     .dim { color: var(--dim); }
     a.link { color: var(--neon-cyan); text-decoration: none; border-bottom: 1px dashed var(--neon-cyan); }
     a.link:hover { color: var(--neon-green); border-color: var(--neon-green); }
@@ -104,46 +116,49 @@
     <div class="content">
       <p><span class="prompt">danek@hub:~$</span> <span class="cmd">whoami</span></p>
       <div class="output">
-        <p><span class="green">Daniil</span> [aka <span class="cyan">danek-ceo</span>]</p>
-        <p class="dim">Computer Science & Information Systems Student (2nd year, Vocational College)</p>
-        <p>Hands-on experience in mobile Pop/Clickunder traffic testing (mVAS), BeMob performance tracking, and data-driven zone optimization. Learning Python and workflow automation.</p>
+        <p><span class="green">Daniil Zavalishin</span> [aka <span class="cyan">danek-ceo</span>]</p>
+        <p class="dim">2nd-year CS Student | Information Systems & Programming (09.02.07)</p>
+        <p>Junior Media Buyer Trainee & Performance Marketing Explorer. Hands-on experience in mobile traffic tracking (mVAS), BeMob Postback macros, zone optimization, and Python workflow automation.</p>
       </div>
 
       <p><span class="prompt">danek@hub:~$</span> <span class="cmd">cat skills_and_stack.json</span></p>
       <div class="output">
-        <div style="margin-bottom: 6px;"><strong>Media Buying Ops & Analytics:</strong></div>
+        <div style="margin-bottom: 6px;"><strong>Media Buying & Analytics:</strong></div>
+        <span class="tag">BeMob Tracker</span>
+        <span class="tag">Postback & Dynamic Tokens</span>
+        <span class="tag">Zone/Spot ID Analytics</span>
+        <span class="tag">Blacklist / Whitelist</span>
         <span class="tag">OctoClick</span>
         <span class="tag">ClickAdilla</span>
         <span class="tag">Juddy.biz</span>
-        <span class="tag">BeMob Tracker</span>
-        <span class="tag">Postback & Token Macros</span>
-        <span class="tag">Zone ID Analytics</span>
-        <span class="tag">Blacklist / Whitelist</span>
         <span class="tag">OS Split (Android / iOS)</span>
 
         <div style="margin: 12px 0 6px 0;"><strong>Engineering & Tools:</strong></div>
-        <span class="tag">Python (Learning)</span>
+        <span class="tag tag-py">Python 3 (Automation)</span>
+        <span class="tag tag-sh">Linux / Bash CLI</span>
         <span class="tag">Git & GitHub</span>
-        <span class="tag">MS Excel / Access / Word</span>
-        <span class="tag">Claude Code / AI Dev</span>
-        <span class="tag">Windows 11</span>
+        <span class="tag">Relational DBs (Access / SQL Basics)</span>
+        <span class="tag">MS Excel / Tables</span>
+        <span class="tag">VS Code</span>
       </div>
 
-      <p><span class="prompt">danek@hub:~$</span> <span class="cmd">cat projects.txt</span></p>
+      <p><span class="prompt">danek@hub:~$</span> <span class="cmd">ls -la repositories/</span></p>
       <div class="output">
-        <p>1. <span class="green">Crypto Pay Telegram Bot</span> - educational Telegram bot for cryptocurrency subscription processing (in development).</p>
-        <p>2. <span class="cyan">mVAS Precision Testing</span> - independent campaign testing with deep zone performance analysis and OS-specific bid optimization.</p>
+        <p>1. <a class="link" href="https://github.com/danek-ceo-0586/media-buying-notes" target="_blank">media-buying-notes</a> <span class="green">[Python 100%]</span> — Glossary, formulas, checklist, ROI calculator & zone cleaner scripts.</p>
+        <p>2. <a class="link" href="https://github.com/danek-ceo-0586/linux-practice" target="_blank">linux-practice</a> <span class="purple">[Shell]</span> — Linux CLI cheatsheet and automated system monitoring Bash scripts.</p>
+        <p>3. <a class="link" href="https://github.com/danek-ceo-0586/college-coursework" target="_blank">college-coursework</a> — Practical assignments: web development basics & database modeling.</p>
       </div>
 
       <p><span class="prompt">danek@hub:~$</span> <span class="cmd">echo $CAREER_GOAL</span></p>
       <div class="output">
-        <p><span class="amber">Target:</span> Junior / Trainee role in a CPA network or media buying team (Support, Operations, Assistant Media Buyer) with growth towards Affiliate Manager.</p>
+        <p><span class="amber">Target Role:</span> Junior Media Buyer / Assistant Buyer / Technical Support Specialist in an Affiliate Team or CPA Network.</p>
       </div>
 
       <p><span class="prompt">danek@hub:~$</span> <span class="cmd">contact --list</span></p>
       <div class="output">
         <p>-> GitHub: <a class="link" href="https://github.com/danek-ceo-0586" target="_blank">github.com/danek-ceo-0586</a></p>
-        <p>-> Telegram: <a class="link" href="https://t.me/danek0586" target="_blank">@danek0586</a> (work: @rudolpf_send)</p>
+        <p>-> Telegram: <a class="link" href="https://t.me/danek0586" target="_blank">@danek0586</a> (Work: @rudolpf_send)</p>
+        <p>-> Partnerkin: <span class="cyan">Verified Media Buyer CV</span></p>
       </div>
 
       <p><span class="prompt">danek@hub:~$</span> <span class="cursor"></span></p>
